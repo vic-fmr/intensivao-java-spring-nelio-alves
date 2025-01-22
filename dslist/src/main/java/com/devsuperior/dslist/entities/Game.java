@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.Objects;
 
 @Entity
-@Table(name = "game")
+@Table(name = "tb_game")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,13 +19,17 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    private Double score;
 
     @Column(name = "game_year")
     private Integer year;
-
     private String genre;
-    private String plataform;
+    private String platforms;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 }
